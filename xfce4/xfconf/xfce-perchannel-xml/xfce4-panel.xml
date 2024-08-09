@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-1" type="empty">
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.085400000000000004"/>
+        <value type="double" value="0.099050000000000013"/>
+        <value type="double" value="0.14000000000000001"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="enable-struts" type="bool" value="true"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="icon-size" type="uint" value="18"/>
+      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="length" type="double" value="100"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="mode" type="uint" value="0"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="17"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="6"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+        <value type="int" value="12"/>
+        <value type="int" value="14"/>
+        <value type="int" value="3"/>
+      </property>
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="28"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-10" type="string" value="notification-plugin"/>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="digital-date-font" type="string" value="DejaVuSansM Nerd Font Propo 12"/>
+      <property name="digital-date-format" type="string" value="%H:%M %d/%m"/>
+      <property name="digital-layout" type="uint" value="2"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="tooltip-format" type="string" value="%x"/>
+    </property>
+    <property name="plugin-14" type="string" value="actions">
+      <property name="appearance" type="uint" value="1"/>
+      <property name="button-title" type="uint" value="3"/>
+      <property name="custom-title" type="string" value=""/>
+    </property>
+    <property name="plugin-17" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-3" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="miniature-view" type="bool" value="false"/>
+      <property name="numbering" type="bool" value="false"/>
+      <property name="rows" type="uint" value="1"/>
+      <property name="workspace-scrolling" type="bool" value="true"/>
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="hidden-items" type="array">
+        <value type="string" value="dnfdragora-updater"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="chrome_status_icon_1"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="dnfdragora-updater"/>
+      </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (63%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (85%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (90%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (74%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (65%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (44%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (84%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (77%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (55%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (69%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (47%)"/>
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (34%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (57%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (62%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (64%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (50%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (60%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (49%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (53%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (59%)"/>
+        <value type="string" value="dnfdragora-updater"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (54%)"/>
+        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (52%)"/>
+      </property>
+    </property>
+    <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="known-players" type="string" value="firefox"/>
+      <property name="show-notifications" type="bool" value="true"/>
+    </property>
+    <property name="plugin-9" type="string" value="power-manager-plugin"/>
+  </property>
+</channel>
