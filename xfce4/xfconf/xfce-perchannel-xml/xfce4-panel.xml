@@ -77,6 +77,12 @@
         <value type="string" value="dnfdragora-updater"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (58%)"/>
+        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (51%)"/>
+        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (48%)"/>
+        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (49%)"/>
+        <value type="string" value="volumeicon"/>
+        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (54%)"/>
         <value type="string" value="wi-fi network connection “cailloute” active: cailloute (55%)"/>
         <value type="string" value="wi-fi network connection “cailloute” active: cailloute (63%)"/>
         <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (85%)"/>
