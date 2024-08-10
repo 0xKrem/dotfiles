@@ -105,30 +105,6 @@ awful.layout.layouts = {
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
--- Create a wibox for each screen and add it
-local taglist_buttons = gears.table.join(
-	awful.button({}, 1, function(t)
-		t:view_only()
-	end),
-	awful.button({ modkey }, 1, function(t)
-		if client.focus then
-			client.focus:move_to_tag(t)
-		end
-	end),
-	awful.button({}, 3, awful.tag.viewtoggle),
-	awful.button({ modkey }, 3, function(t)
-		if client.focus then
-			client.focus:toggle_tag(t)
-		end
-	end),
-	awful.button({}, 4, function(t)
-		awful.tag.viewnext(t.screen)
-	end),
-	awful.button({}, 5, function(t)
-		awful.tag.viewprev(t.screen)
-	end)
-)
-
 local function set_wallpaper(s)
 	-- Wallpaper
 	if beautiful.wallpaper then
@@ -141,7 +117,6 @@ local function set_wallpaper(s)
 	end
 end
 
--- beautiful.taglist_font = "DejaVuSansM Nerd Font Propo 14"
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -278,17 +253,6 @@ globalkeys = gears.table.join(
 		{ description = "reload awesome", group = "awesome" }
 	),
 
-	--Quit Awesome
-	awful.key(
-		{
-			modkey, -- Modifier
-			"Control",
-		},
-		"x", -- Key
-		awesome.quit, --Action
-		{ description = "quit awesome", group = "awesome" }
-	),
-
 	--Resize window
 	awful.key(
 		{ modkey }, --Modifier
@@ -329,29 +293,6 @@ globalkeys = gears.table.join(
 			awful.tag.incnmaster(-1, nil, true)
 		end,
 		{ description = "decrease the number of master clients", group = "layout" }
-	),
-
-	awful.key(
-		{
-			modkey, --Modifier
-			"Control",
-		}, --Key
-		"h",
-		function() --Action
-			awful.tag.incncol(1, nil, true)
-		end,
-		{ description = "increase the number of columns", group = "layout" }
-	),
-	awful.key(
-		{
-			modkey, --Modifier
-			"Control",
-		}, --Key
-		"l",
-		function() --Action
-			awful.tag.incncol(-1, nil, true)
-		end,
-		{ description = "decrease the number of columns", group = "layout" }
 	),
 
 	awful.key(
@@ -475,139 +416,6 @@ globalkeys = gears.table.join(
 		end,
 		{ description = "Print screen", group = "Multimedia" }
 	)
-
-	-- -- Prompt
-	-- awful.key({ modkey }, "r", function()
-	-- 	awful.screen.focused().mypromptbox:run()
-	-- end, { description = "run prompt", group = "launcher" }),
-
-	--}),
-	--awful.key({ modkey }, "x", function()
-	--	awful.prompt.run({
-	--		prompt = "Run Lua code: ",
-	--		textbox = awful.screen.focused().mypromptbox.widget,
-	--		exe_callback = awful.util.eval,
-	--		history_path = awful.util.get_cache_dir() .. "/history_eval",
-	--	})
-	--end, { description = "lua execute prompt", group = "awesome" }),
-	-- Menubar
-	--awful.key({ modkey }, "p", function()
-	--	menubar.show()
-	--end, { description = "show the menubar", group = "launcher" })
-
-	--[[-----------------------
-	|						  |
-	|	MULTIMEDIA BINDINGS   |
-	|						  |
-	-------------------------]]
-	--[[
-	--Volume Up
-	awful.key(
-		{}, --Modifier
-		"XF86AudioRaiseVolume", --Key
-		function() --Action
-			awful.spawn("amixer set Master 5%+")
-		end,
-		{ description = "raise volume", group = "Multimedia" }
-	),
-	--Volume Down
-	awful.key(
-		{}, --Modifier
-		"XF86AudioLowerVolume", --Key
-		function() --Action
-			awful.spawn("amixer set Master 5%-")
-		end,
-		{ description = "lower volume", group = "Multimedia" }
-	),
-	--Mute/Unmute sound
-	awful.key(
-		{}, --Modifier
-		"XF86AudioMute", --Key
-		function() --Action
-			awful.spawn("amixer set Master toggle")
-		end,
-		{ description = "mute/unmute output", group = "Multimedia" }
-	),
-	--Mute/Unmute microphone
-	awful.key(
-		{}, --Modifier
-		"XF86AudioMicMute", --Key
-		function() --Action
-			awful.spawn("amixer set Capture toggle")
-		end,
-		{ description = "mute/unmute microphone", group = "Multimedia" }
-	),
-	--Play/pause
-	awful.key(
-		{}, --Modifier
-		"XF86AudioPlay", --Key
-		function() --Action
-			awful.spawn("playerctl play-pause")
-		end,
-		{ description = "Play/pause", group = "Multimedia" }
-	),
-	--Play next song
-	awful.key(
-		{}, --Modifier
-		"XF86AudioNext", --Key
-		function() --Action
-			awful.spawn("playerctl next")
-		end,
-		{ description = "Play next song", group = "Multimedia" }
-	),
-	--Play previous song
-	awful.key(
-		{}, --Modifier
-		"XF86AudioPrev", --Key
-		function() --Action
-			awful.spawn("playerctl previous")
-		end,
-		{ description = "Play previous song", group = "Multimedia" }
-	),
-	--Brightness Down
-	awful.key(
-		{}, --Modifier
-		"XF86MonBrightnessDown", --Key
-		function() --Action
-			awful.spawn("light -U 5")
-		end,
-		{ description = "brightness down", group = "Multimedia" }
-	),
-	--Brightness Up
-	awful.key(
-		{}, --Modifier
-		"XF86MonBrightnessUp", --Key
-		function() --Action
-			awful.spawn("light -A 5")
-		end,
-		{ description = "brightness up", group = "Multimedia" }
-	),
-	--]]
-	--[[----------------------
-	|					     |
-	|	SUPER KEY BINDINGS   |
-	|					     |
-	------------------------]]
-	--[[
-	--Display settings
-	awful.key(
-		{ "Mod4" }, --Modifier
-		"p", --Key
-		function() --Action
-			awful.spawn("arandr")
-		end,
-		{ description = "display settings", group = "Multimedia" }
-	),
-	--lock screen
-	awful.key(
-		{ "Mod4" }, --Modifier
-		"l", --Key
-		function() --Action
-			awful.spawn("i3lock")
-		end,
-		{ description = "lock screen", group = "Multimedia" }
-	)
-	--]]
 )
 
 clientkeys = gears.table.join(
@@ -627,29 +435,23 @@ clientkeys = gears.table.join(
 	awful.key({ modkey, "Control" }, "Return", function(c)
 		c:swap(awful.client.getmaster())
 	end, { description = "move to master", group = "client" }),
+
 	--awful.key({ modkey }, "o", function(c)
 	--c:move_to_screen()
 	--end, { description = "move to screen", group = "client" }),
+
 	--awful.key({ modkey }, "t", function(c)
 	--c.ontop = not c.ontop
 	--end, { description = "toggle keep on top", group = "client" }),
+
 	awful.key({ modkey }, "n", function(c)
-		-- The client currently has the input focus, so it cannot be
-		-- minimized, since minimized clients can't have the focus.
 		c.minimized = true
 	end, { description = "minimize", group = "client" }),
+
 	awful.key({ modkey }, "m", function(c)
 		c.maximized = not c.maximized
 		c:raise()
 	end, { description = "(un)maximize", group = "client" })
-	--awful.key({ modkey, "Control" }, "m", function(c)
-	--	c.maximized_vertical = not c.maximized_vertical
-	--	c:raise()
-	--end, { description = "(un)maximize vertically", group = "client" }),
-	--awful.key({ modkey, "Shift" }, "m", function(c)
-	--	c.maximized_horizontal = not c.maximized_horizontal
-	--	c:raise()
-	--end, { description = "(un)maximize horizontally", group = "client" })
 )
 
 -- Bind all key numbers to tags.
