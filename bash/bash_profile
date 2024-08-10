@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# setup awesome desktop env
+if [[ $DESKTOP_SESSION == "awesome" ]]; then
+    # system tray
+    nm-applet &>/dev/null &
+    blueman-applet &>/dev/null &
+    battray &> /dev/null &
+    volumeicon &> /dev/null &
+    pasystray &> /dev/null &
+fi 
+
+# switch dotfiles
+git -C /home/krem/.config/ stash
+
+if [[ $DESKTOP_SESSION == "awesome" ]]; then
+    git -C /home/krem/.config/ checkout awesome
+else 
+    git -C /home/krem/.config checkout xfce
+fi 

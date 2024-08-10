@@ -19,16 +19,11 @@
 !awesome/
 !awesome/**
 
-!awesome-xf/
-!awesome-xf/**
-
-!awesome-aw/
-!awesome-aw/**
-
 !flameshot/
 !flameshot/**
 
-!bash/.bashrc
+!bash/
+!bash/**
 
 !i3/
 !i3/**
