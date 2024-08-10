@@ -7,9 +7,9 @@
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
       <property name="background-rgba" type="array">
-        <value type="double" value="0.085400000000000004"/>
-        <value type="double" value="0.099050000000000013"/>
-        <value type="double" value="0.14000000000000001"/>
+        <value type="double" value="0.10980392156862746"/>
+        <value type="double" value="0.10980392156862746"/>
+        <value type="double" value="0.1803921568627451"/>
         <value type="double" value="1"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
@@ -77,38 +77,6 @@
         <value type="string" value="dnfdragora-updater"/>
       </property>
       <property name="known-legacy-items" type="array">
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (58%)"/>
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (51%)"/>
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (48%)"/>
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (49%)"/>
-        <value type="string" value="volumeicon"/>
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (54%)"/>
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (55%)"/>
-        <value type="string" value="wi-fi network connection “cailloute” active: cailloute (63%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (85%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (90%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (74%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (65%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (44%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (84%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (77%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (55%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (69%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (47%)"/>
-        <value type="string" value="ethernet network connection “wired connection 1” active"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (34%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (57%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (62%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (64%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (50%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (60%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (49%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (53%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (59%)"/>
-        <value type="string" value="dnfdragora-updater"/>
-        <value type="string" value="blueman"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (54%)"/>
-        <value type="string" value="wi-fi network connection “livebox-46f0” active: livebox-46f0 (52%)"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
