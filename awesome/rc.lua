@@ -79,6 +79,8 @@ tag_icons[3] = "  "
 tag_icons[4] = " 󰭻 "
 tag_icons[5] = " 󰝰 "
 tag_icons[6] = " 󰝚 "
+tag_icons[7] = "  "
+tag_icons[8] = "  "
 
 -- Modkey
 modkey = "Mod1"
@@ -99,44 +101,9 @@ awful.layout.layouts = {
 	awful.layout.suit.floating,
 }
 
--- {{{ Menu
--- Create a launcher widget and a main menu
-myawesomemenu = {
-	{
-		"hotkeys",
-		function()
-			hotkeys_popup.show_help(nil, awful.screen.focused())
-		end,
-	},
-	{ "manual", terminal .. " -e man awesome" },
-	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart", awesome.restart },
-	{
-		"quit",
-		function()
-			awesome.quit()
-		end,
-	},
-}
-
-mymainmenu = awful.menu({
-	items = {
-		{ "awesome", myawesomemenu, beautiful.awesome_icon },
-		{ "Terminal", terminal },
-		{ "Firefox", browser },
-	},
-})
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
-
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
--- {{{ Wibar
--- Create a textclock widget
-mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -162,25 +129,6 @@ local taglist_buttons = gears.table.join(
 	end)
 )
 
-local tasklist_buttons = gears.table.join(
-	awful.button({}, 1, function(c)
-		if c == client.focus then
-			c.minimized = true
-		else
-			c:emit_signal("request::activate", "tasklist", { raise = true })
-		end
-	end),
-	awful.button({}, 3, function()
-		awful.menu.client_list({ theme = { width = 250 } })
-	end),
-	awful.button({}, 4, function()
-		awful.client.focus.byidx(1)
-	end),
-	awful.button({}, 5, function()
-		awful.client.focus.byidx(-1)
-	end)
-)
-
 local function set_wallpaper(s)
 	-- Wallpaper
 	if beautiful.wallpaper then
@@ -202,11 +150,8 @@ awful.screen.connect_for_each_screen(function(s)
 	set_wallpaper(s)
 
 	-- Each screen has its own tag table.
-	awful.tag(
-		{ tag_icons[1], tag_icons[2], tag_icons[3], tag_icons[4], tag_icons[5], tag_icons[6] },
-		s,
-		awful.layout.layouts[1]
-	)
+	awful.tag(tag_icons, s, awful.layout.layouts[1])
+
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
 	-- Create an imagebox widget which will contain an icon indicating which layout we're using.
