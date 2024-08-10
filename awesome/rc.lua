@@ -151,42 +151,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Each screen has its own tag table.
 	awful.tag(tag_icons, s, awful.layout.layouts[1])
-
-	-- s.mywibox = awful.wibar({
-	-- 	position = "top",
-	-- 	screen = s,
-	-- 	visible = false,
-	-- 	height = 28,
-	-- })
-
-	-- Add widgets to the wibox
-	-- s.mywibox:setup({
-	-- 	layout = wibox.layout.align.horizontal,
-	-- 	{ -- Left widgets
-	-- 		mylauncher,
-	-- 		layout = wibox.layout.fixed.horizontal,
-	-- 		s.mytaglist,
-	-- 	},
-	-- 	s.mytasklist, -- Middle widget
-	-- 	{ -- Right widgets
-	-- 		layout = wibox.layout.fixed.horizontal,
-	-- 		wibox.widget.systray(),
-	-- 		mytextclock,
-	-- 		s.mylayoutbox,
-	-- 	},
-	-- })
 end)
--- }}}
-
--- {{{ Mouse bindings
---root.buttons(gears.table.join(
---	--awful.button({}, 3, function()
---	--mymainmenu:toggle()
---	--end),
---	awful.button({}, 4, awful.tag.viewnext),
---	awful.button({}, 5, awful.tag.viewprev)
---))
--- }}}
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
