@@ -454,14 +454,12 @@ clientkeys = gears.table.join(
 	end, { description = "(un)maximize", group = "client" })
 )
 
--- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it work on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
-local max_workspace = 6
-local tag_keys = { "a", "z", "e", "q", "s", "d" }
+local max_workspace = 9
+local tag_keys = { "&", "é", '"', "'", "(", "-", "è", "_", "ç" }
 for i = 1, max_workspace do
 	globalkeys = gears.table.join(
 		globalkeys,
+		--
 		-- View tag only.
 		awful.key({ modkey }, tag_keys[i], function()
 			local screen = awful.screen.focused()
@@ -470,6 +468,7 @@ for i = 1, max_workspace do
 				tag:view_only()
 			end
 		end, { description = "view tag #" .. i, group = "tag" }),
+
 		-- Toggle tag display.
 		awful.key({ modkey, "Control" }, tag_keys[i], function()
 			local screen = awful.screen.focused()
@@ -478,6 +477,7 @@ for i = 1, max_workspace do
 				awful.tag.viewtoggle(tag)
 			end
 		end, { description = "toggle tag #" .. i, group = "tag" }),
+
 		-- Move client to tag.
 		awful.key({ modkey, "Shift" }, tag_keys[i], function()
 			if client.focus then
@@ -487,6 +487,7 @@ for i = 1, max_workspace do
 				end
 			end
 		end, { description = "move focused client to tag #" .. i, group = "tag" }),
+
 		-- Toggle tag on focused client.
 		awful.key({ modkey, "Control", "Shift" }, tag_keys[i], function()
 			if client.focus then
@@ -500,13 +501,16 @@ for i = 1, max_workspace do
 end
 
 clientbuttons = gears.table.join(
+
 	awful.button({}, 1, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 	end),
+
 	awful.button({ modkey }, 1, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 		awful.mouse.client.move(c)
 	end),
+
 	awful.button({ modkey }, 3, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 		awful.mouse.client.resize(c)
@@ -579,7 +583,7 @@ awful.rules.rules = {
 	{ rule = { class = "obsidian" }, properties = { screen = 1, tag = tag_icons[3] } },
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[4] } },
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[5] } },
-	{ rule = { class = "settings" }, properties = { screen = 1, tag = tag_icons[6], floating = false } },
+	{ rule = { class = "settings" }, properties = { screen = 1, tag = tag_icons[7], floating = false } },
 }
 -- }}}
 
