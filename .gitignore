@@ -38,10 +38,11 @@
 !gtk-3.0/
 !gtk-3.0/**
 
-!xfce-panel.tar.bz2
+!xfce/
+!xfce/**
 
 # ignore specific files
 nvim/lazy-lock.json
 vim/.netrwhist
+
 xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
-xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml

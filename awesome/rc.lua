@@ -73,14 +73,14 @@ txteditor = terminal .. " -e nvim"
 settings = "xfce4-settings-manager"
 
 tag_icons = {}
-tag_icons[1] = " 󰈹 "
-tag_icons[2] = "  "
-tag_icons[3] = "  "
-tag_icons[4] = " 󰭻 "
-tag_icons[5] = " 󰝰 "
-tag_icons[6] = " 󰝚 "
-tag_icons[7] = "  "
-tag_icons[8] = "  "
+tag_icons[1] = "󰈹"
+tag_icons[2] = ""
+tag_icons[3] = "󱞁"
+tag_icons[4] = "󰭻"
+tag_icons[5] = "󰝰"
+tag_icons[6] = ""
+tag_icons[8] = "󰝚"
+tag_icons[7] = ""
 
 -- Modkey
 modkey = "Mod1"
