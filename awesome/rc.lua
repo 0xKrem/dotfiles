@@ -73,7 +73,7 @@ txteditor = terminal .. " -e nvim"
 settings = "xfce4-settings-manager"
 
 tag_icons = {}
-tag_icons[1] = "󰈹"
+tag_icons[1] = "󰖟"
 tag_icons[2] = ""
 tag_icons[3] = "󱞁"
 tag_icons[4] = "󰍹"
