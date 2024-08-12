@@ -4,6 +4,15 @@
 # allow specific files
 !.gitignore
 
+!xfce/
+!xfce/**
+
+!awesome/
+!awesome/**
+
+!gtk-3.0/
+!gtk-3.0/**
+
 !vim/
 !vim/**
 
@@ -15,9 +24,6 @@
 
 !terminator/
 !terminator/**
-
-!awesome/
-!awesome/**
 
 !flameshot/
 !flameshot/**
@@ -33,13 +39,6 @@
 
 !rofi/
 !rofi/**
-
-# removed soon
-!gtk-3.0/
-!gtk-3.0/**
-
-!xfce/
-!xfce/**
 
 # ignore specific files
 nvim/lazy-lock.json
