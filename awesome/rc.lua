@@ -340,7 +340,7 @@ globalkeys = gears.table.join(
 	--Rofi
 	awful.key(
 		{ modkey }, --Modifier
-		"r", --Key
+		"a", --Key
 		function() --Action
 			awful.spawn(launcher)
 		end,
@@ -411,6 +411,14 @@ globalkeys = gears.table.join(
 	awful.key(
 		{}, --Modifier
 		"Print", --Key
+		function() --Action
+			awful.spawn("flameshot gui")
+		end,
+		{ description = "Print screen", group = "Multimedia" }
+	),
+	awful.key(
+		{ modkey }, --Modifier
+		"s", --Key
 		function() --Action
 			awful.spawn("flameshot gui")
 		end,
@@ -581,9 +589,10 @@ awful.rules.rules = {
 	--#########################################################
 	-- Window Rules
 	{ rule = { class = "obsidian" }, properties = { screen = 1, tag = tag_icons[3] } },
-	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[4] } },
-	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[5] } },
-	{ rule = { class = "settings" }, properties = { screen = 1, tag = tag_icons[7], floating = false } },
+	{ rule = { class = "virt-manager" }, properties = { screen = 1, tag = tag_icons[4] } },
+	{ rule = { class = "Evince" }, properties = { screen = 1, tag = tag_icons[5] } },
+	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
+	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[7] } },
 }
 -- }}}
 
