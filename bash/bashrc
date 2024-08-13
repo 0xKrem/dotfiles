@@ -112,11 +112,9 @@ alias shutdown='sudo shutdown now'
 alias neofetch='fastfetch'
 
 alias docker='sudo docker'
-alias vim='nvim'
 
 #Conf file
 alias vawesome='vim ~/.config/awesome/rc.lua'
-alias bashrc='nvim ~/.bashrc'
 alias nvimrc='nvim ~/.config/nvim/init.lua'
 alias vimrc='vi ~/.config/vim/vimrc'
 alias st='git status'
