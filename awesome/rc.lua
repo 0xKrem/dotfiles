@@ -87,7 +87,7 @@ tag_icons[8] = "󰝚"
 modkey = "Mod1"
 
 -- Windows gaps
-beautiful.useless_gap = 8
+beautiful.useless_gap = 7
 
 --[[---------------
 |			      |
@@ -617,14 +617,19 @@ awful.rules.rules = {
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[7] } },
 
-	{ rule = { class = "Blueman-manager" }, 
-        properties = { 
+    -- show bluetooth connection window under the tray
+    { rule = { class = "Blueman-manager" }, 
+    properties = { 
             floating = true,
             screen = awful.screen.focused(),
             placement = awful.placement.top_right,
+            border_width = 0,
+            ontop = true,
         }
     },
-}
+        -- xfce panel no borders
+        { rule = { class = "Xfce4-panel" }, properties = { border_width = 0 } },
+    }
 -- }}}
 
 -- {{{ Signals
