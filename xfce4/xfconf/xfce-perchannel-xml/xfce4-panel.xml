@@ -23,6 +23,7 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="17"/>
         <value type="int" value="4"/>
+        <value type="int" value="1"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
@@ -77,13 +78,17 @@
         <value type="string" value="dnfdragora-updater"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="blueman"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="known-players" type="string" value="firefox"/>
+      <property name="known-players" type="string" value="Brave;firefox"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-1" type="string" value="tasklist">
+      <property name="show-handle" type="bool" value="false"/>
+    </property>
   </property>
 </channel>

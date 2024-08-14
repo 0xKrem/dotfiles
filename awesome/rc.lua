@@ -581,7 +581,6 @@ awful.rules.rules = {
 			},
 			class = {
 				"Arandr",
-				"Blueman-manager",
 				"Gpick",
 				"Kruler",
 				"MessageWin", -- kalarm.
@@ -617,6 +616,14 @@ awful.rules.rules = {
 	{ rule = { class = "Evince" }, properties = { screen = 1, tag = tag_icons[5] } },
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[7] } },
+
+	{ rule = { class = "Blueman-manager" }, 
+        properties = { 
+            floating = true,
+            screen = awful.screen.focused(),
+            placement = awful.placement.top_right,
+        }
+    },
 }
 -- }}}
 
