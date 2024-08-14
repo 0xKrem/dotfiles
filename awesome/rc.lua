@@ -54,7 +54,6 @@ beautiful.init("~/.config/awesome/theme/theme.lua")
 
 -- Launch at startup
 os.execute("picom -b")
-os.execute("flatpak run md.obsidian.Obsidian")
 
 --[[------------
 |				|
@@ -616,21 +615,22 @@ awful.rules.rules = {
 	{ rule = { class = "Evince" }, properties = { screen = 1, tag = tag_icons[5] } },
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[7] } },
-    { rule = { class = "easyeffects" }, properties = { screen = 1, tag = tag_icons[8] } }
+	{ rule = { class = "easyeffects" }, properties = { screen = 1, tag = tag_icons[8] } },
 
-    -- show bluetooth connection window under the tray
-    { rule = { class = "Blueman-manager" }, 
-    properties = { 
-            floating = true,
-            screen = awful.screen.focused(),
-            placement = awful.placement.top_right,
-            border_width = 0,
-            ontop = true,
-        }
-    },
-        -- xfce panel no borders
-        { rule = { class = "Xfce4-panel" }, properties = { border_width = 0 } },
-    }
+	-- show bluetooth connection window under the tray
+	{
+		rule = { class = "Blueman-manager" },
+		properties = {
+			floating = true,
+			screen = awful.screen.focused(),
+			placement = awful.placement.top_right,
+			border_width = 0,
+			ontop = true,
+		},
+	},
+	-- xfce panel no borders
+	{ rule = { class = "Xfce4-panel" }, properties = { border_width = 0 } },
+}
 -- }}}
 
 -- {{{ Signals
