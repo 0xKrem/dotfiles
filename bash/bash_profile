@@ -11,7 +11,9 @@ if [[ $DESKTOP_SESSION == "awesome" ]]; then
 fi 
 
 # switch dotfiles
-git -C /home/krem/.config/ stash
+if [[ $DESKTOP_SESSION != "$(git -C /home/krem/.config/ branch --show-current)" ]]; then
+    git -C /home/krem/.config/ stash
+fi
 
 if [[ $DESKTOP_SESSION == "awesome" ]]; then
     git -C /home/krem/.config/ checkout awesome
