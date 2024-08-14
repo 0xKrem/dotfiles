@@ -54,6 +54,7 @@ beautiful.init("~/.config/awesome/theme/theme.lua")
 
 -- Launch at startup
 os.execute("picom -b")
+os.execute("flatpak run md.obsidian.Obsidian")
 
 --[[------------
 |				|
@@ -130,6 +131,29 @@ end)
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+	--[[------------------
+	|					 |
+	|	XFCE BINDINGS    |
+	|					 |
+	--------------------]]
+	--lock screen
+	awful.key(
+		{ "Mod4" }, --Modifier
+		"l", --Key
+		function() --Action
+			awful.spawn("xfce4-screensaver-command -l")
+		end,
+		{ description = "lock screen", group = "Multimedia" }
+	),
+	--Display settings
+	awful.key(
+		{ "Mod4" }, --Modifier
+		"p", --Key
+		function() --Action
+			awful.spawn("xfce4-display-settings -m")
+		end,
+		{ description = "display settings", group = "Multimedia" }
+	),
 	--[[--------------------
 	|					   |
 	|	WINDOW BINDINGS    |
