@@ -613,7 +613,7 @@ awful.rules.rules = {
 	--#########################################################
 	-- Window Rules
 	{ rule = { class = "obsidian" }, properties = { screen = 1, tag = tag_icons[3] } },
-	{ rule = { class = "virt-manager" }, properties = { screen = 1, tag = tag_icons[4] } },
+	{ rule = { class = "Virt-manager" }, properties = { screen = 1, tag = tag_icons[4] } },
 	{ rule = { class = "Evince" }, properties = { screen = 1, tag = tag_icons[5] } },
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[7] } },
