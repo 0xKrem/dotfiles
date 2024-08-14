@@ -53,7 +53,9 @@ end
 beautiful.init("~/.config/awesome/theme/theme.lua")
 
 -- Launch at startup
-os.execute("picom -b")
+os.execute("picom -b") -- compositor
+-- apps
+awful.spawn.with_shell("flatpak run md.obsidian.Obsidian")
 
 --[[------------
 |				|
