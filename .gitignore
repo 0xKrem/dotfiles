@@ -43,6 +43,8 @@
 !rofi/
 !rofi/**
 
+!autostart/awesome.desktop
+
 # ignore specific files
 nvim/lazy-lock.json
 vim/.netrwhist

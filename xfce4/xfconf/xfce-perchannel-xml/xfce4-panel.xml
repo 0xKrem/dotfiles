@@ -35,7 +35,7 @@
       </property>
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="28"/>
+      <property name="size" type="uint" value="30"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -62,7 +62,7 @@
       <property name="miniature-view" type="bool" value="false"/>
       <property name="numbering" type="bool" value="false"/>
       <property name="rows" type="uint" value="1"/>
-      <property name="workspace-scrolling" type="bool" value="true"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -73,6 +73,7 @@
         <value type="string" value="dnfdragora-updater"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="vlc"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="blueman"/>
         <value type="string" value="dnfdragora-updater"/>
@@ -83,7 +84,7 @@
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="known-players" type="string" value="Brave;firefox"/>
+      <property name="known-players" type="string" value="Brave;firefox;vlc"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
