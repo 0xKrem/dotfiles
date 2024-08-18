@@ -1,15 +1,18 @@
 .flat,
 .toggle {
   font-family: 'DejaVuSans Nerd Font';
-  font-size: 18px;
-  padding: 3px 6px;
+  font-size: 20px;
+  padding: 0px 9px 0px 7px;
 }
+
 .flat:hover,
 .toggle:hover {
   background-color: #2a3045;
 }
+
 .flat:checked,
 .toggle:checked {
   background-color: #11121a;
   border-bottom: 2px solid #bfd3ff;
+  border-radius: 8px;
 }
