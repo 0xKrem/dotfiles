@@ -276,6 +276,61 @@ function M.setup_screen(s)
 	padded_layoutbox:set_top(3) -- Add 5 pixels of padding at the top (adjust as needed)
 	padded_layoutbox:set_bottom(3)
 
+	--bluetooth
+	-- Define the Bluetooth widget
+	local bluetooth_widget = wibox.widget({
+		text = "Bluetooth",
+		align = "center",
+		valign = "center",
+		widget = wibox.widget.textbox,
+	})
+
+	-- Style the widget
+	local bluetooth_button = wibox.container.background()
+	bluetooth_button:set_widget(bluetooth_widget)
+	bluetooth_button:set_bg(gears.color("#0000ff")) -- Set background color
+	bluetooth_button:set_fg(gears.color("#ffffff")) -- Set text color
+
+	-- Variable to store the spawned blueman-manager client
+	local blueman_client = nil
+
+	-- Function to toggle blueman-manager
+	local function toggle_bluetooth_manager()
+		if blueman_client and blueman_client.valid then
+			-- Check if the client is minimized
+			if blueman_client.minimized then
+				blueman_client:emit_signal("request::activate", "mouse_click", { raise = true })
+				return
+			end
+
+			-- Close the blueman-manager window
+			blueman_client:kill()
+			blueman_client = nil
+		else
+			-- Spawn blueman-manager and store the client
+			awful.spawn.with_shell("blueman-manager", function(c)
+				blueman_client = c
+				-- Set rules for placement and other properties
+				c:connect_signal("manage", function()
+					c:connect_signal("focus", function()
+						if not c:isvisible() then
+							c:kill()
+						end
+					end)
+					c:connect_signal("unfocus", function()
+						gears.timer.start_new(0.5, function()
+							if not c:isvisible() then
+								c:kill()
+							end
+						end)
+					end)
+				end)
+			end)
+		end
+	end
+
+	-- Set up the button action
+	bluetooth_button:buttons(gears.table.join(awful.button({}, 1, toggle_bluetooth_manager)))
 	--[[---------
 |			|
 |	WIBOX	|
@@ -303,6 +358,7 @@ function M.setup_screen(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			wibox.widget.systray(),
+			bluetooth_button,
 			padded_clock,
 			padded_layoutbox,
 			logoff_button,
