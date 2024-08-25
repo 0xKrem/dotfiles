@@ -1,22 +1,2 @@
 #!/bin/bash
 
-# setup awesome desktop env
-if [[ $DESKTOP_SESSION == "awesome" ]]; then
-    # system tray
-    nm-applet &>/dev/null &
-    blueman-applet &>/dev/null &
-    battray &> /dev/null &
-    volumeicon &> /dev/null &
-    pasystray &> /dev/null &
-fi 
-
-# switch dotfiles
-if [[ $DESKTOP_SESSION != "$(git -C /home/krem/.config/ branch --show-current)" ]]; then
-    git -C /home/krem/.config/ stash
-fi
-
-if [[ $DESKTOP_SESSION == "awesome" ]]; then
-    git -C /home/krem/.config/ checkout awesome
-else 
-    git -C /home/krem/.config checkout xfce
-fi 
