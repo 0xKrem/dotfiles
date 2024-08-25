@@ -112,11 +112,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 screen.connect_signal("property::geometry", funcs.set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
-	-- Wallpaper
-	funcs.set_wallpaper(s)
-
-	-- Each screen has its own tag table.
-	awful.tag(tag_icons, s, awful.layout.layouts[1])
+	funcs.setup_screen(s)
 end)
 
 -- {{{ Key bindings
