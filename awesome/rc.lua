@@ -54,7 +54,6 @@ end
 beautiful.init("~/.config/awesome/theme/theme.lua")
 
 -- Launch at startup
-os.execute("picom -b") -- compositor
 -- apps
 awful.spawn.with_shell("flatpak run md.obsidian.Obsidian")
 
@@ -297,8 +296,6 @@ awful.rules.rules = {
 			ontop = true,
 		},
 	},
-	-- xfce panel no borders
-	{ rule = { class = "Xfce4-panel" }, properties = { border_width = 0 } },
 }
 -- }}}
 

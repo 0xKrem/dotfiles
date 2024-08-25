@@ -144,7 +144,7 @@ return gears.table.join(
 			modkey, -- Modifier
 			"Control",
 		}, -- Key
-		"r", --Action
+		"a", --Action
 		awesome.restart,
 		{ description = "reload awesome", group = "awesome" }
 	),

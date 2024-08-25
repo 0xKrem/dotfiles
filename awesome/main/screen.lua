@@ -33,6 +33,7 @@ local taglist_buttons = gears.table.join(
 	end)
 )
 
+-- task rightclick menu
 local tasklist_buttons = gears.table.join(
 	awful.button({}, 1, function(c)
 		if c == client.focus then
@@ -42,7 +43,7 @@ local tasklist_buttons = gears.table.join(
 		end
 	end),
 	awful.button({}, 3, function()
-		awful.menu.client_list({ theme = { width = 250 } })
+		awful.menu.client_list({ theme = { width = 150 } })
 	end),
 	awful.button({}, 4, function()
 		awful.client.focus.byidx(1)
@@ -98,7 +99,7 @@ function M.setup_screen(s)
 
 	local gradient_focus = gears.color.create_pattern({
 		type = "linear",
-		from = { 1, 16 },
+		from = { 1, 20 },
 		to = { 1, 28 },
 		stops = { { 1, "#94b6ff" }, { 0, "#11121a" } },
 	})
@@ -130,8 +131,8 @@ function M.setup_screen(s)
 			bg_empty = gradient_bg,
 
 			bg_urgent = gradient_urgent,
-			shape = rounded(50),
-			font = "DejaVuSansM Nerd Font Propo 16",
+			shape = rounded(15),
+			font = "DejaVuSansM Nerd Font Propo 17",
 		},
 		layout = {
 			layout = wibox.layout.fixed.horizontal,
@@ -184,7 +185,7 @@ function M.setup_screen(s)
 			bg_normal = gradient_bg,
 			fg_normal = "#FFFFFF",
 			bg_urgent = gradient_urgent,
-			shape = rounded(4),
+			shape = rounded(3),
 		},
 		widget_template = {
 			{
@@ -223,7 +224,7 @@ function M.setup_screen(s)
 		position = "top",
 		screen = s,
 		visible = true,
-		height = 28,
+		height = 30,
 	})
 
 	-- wibox background color
