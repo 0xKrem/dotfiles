@@ -253,6 +253,29 @@ function M.setup_screen(s)
 		-- Execute the command
 		awful.spawn("xfce4-session-logout")
 	end)))
+
+	--clock
+	-- Define the custom time format with an icon and the time
+	local time_format = "󰥔 %H:%M"
+
+	-- Create a custom clock widget with the desired format
+	local my_clock = wibox.widget.textclock(time_format)
+
+	-- Set the desired font and color using a widget container
+	local clock_widget = wibox.container.background()
+	clock_widget:set_widget(my_clock)
+	clock_widget:set_fg(gears.color("#FFFFFF")) -- Set text color to white
+	clock_widget:set_bg(gears.color("#00000000")) -- Optional: Transparent background, if needed
+	my_clock.font = "DejaVuSansM Nerd Font Propo 14" -- Set the desired font
+
+	-- Apply padding if necessary
+	local padded_clock = wibox.container.margin(clock_widget, 10, 10, 5, 5) -- Adjust padding as needed
+
+	-- layoutbox
+	local padded_layoutbox = wibox.container.margin(s.mylayoutbox)
+	padded_layoutbox:set_top(3) -- Add 5 pixels of padding at the top (adjust as needed)
+	padded_layoutbox:set_bottom(3)
+
 	--[[---------
 |			|
 |	WIBOX	|
@@ -263,7 +286,7 @@ function M.setup_screen(s)
 		position = "top",
 		screen = s,
 		visible = true,
-		height = 30,
+		height = 28,
 	})
 
 	-- wibox background color
@@ -280,8 +303,8 @@ function M.setup_screen(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			wibox.widget.systray(),
-			clock_widget,
-			s.mylayoutbox,
+			padded_clock,
+			padded_layoutbox,
 			logoff_button,
 		},
 	})
