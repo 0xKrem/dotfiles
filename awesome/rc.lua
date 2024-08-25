@@ -17,7 +17,10 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+
+-- my includes
 local funcs = require("main.screen")
+local wallpaper = require("looks.wallpaper")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -108,7 +111,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", funcs.set_wallpaper)
+screen.connect_signal("property::geometry", wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
 	funcs.setup_screen(s)

@@ -213,7 +213,46 @@ function M.setup_screen(s)
 			forced_width = 200,
 		},
 	})
+	--- Define the font size and button text
+	local button_text = "" -- Example icon, adjust as needed
+	local font_name = "DejaVuSansM Nerd Font Propo 16"
 
+	-- Create a text widget with the specified font
+	local logoff_button_text = wibox.widget.textbox(button_text)
+	logoff_button_text.font = font_name
+
+	-- Create a container for padding (left and right padding)
+	local padding_container = wibox.container.margin()
+	padding_container:set_widget(logoff_button_text)
+	padding_container:set_left(10) -- Set left padding (adjust as needed)
+	padding_container:set_right(10) -- Set right padding (adjust as needed)
+
+	-- Create a background container for styling with rounded corners
+	local logoff_button = wibox.container.background()
+	logoff_button:set_widget(padding_container)
+	logoff_button:set_bg(gradient_bg) -- Default background color
+	logoff_button:set_fg(gears.color("#FFFFFF")) -- Default text color
+	logoff_button.shape = function(cr, width, height)
+		gears.shape.rounded_rect(cr, width, height, 10) -- Rounded corners with radius 10
+	end
+
+	-- clock
+	local time_format = "󰥔 %H:%M"
+
+	-- Create a custom clock widget
+	local my_clock = wibox.widget.textclock(time_format)
+
+	-- Optionally, apply some padding or styling if needed
+	local clock_widget = wibox.container.margin(my_clock, 10, 10, 5, 5) -- Adjust padding as needed
+
+	-- Add a click action to the button
+	logoff_button:buttons(gears.table.join(awful.button({}, 1, function()
+		-- Change the background color on click
+		logoff_button:set_bg(gradient_focus)
+
+		-- Execute the command
+		awful.spawn("xfce4-session-logout")
+	end)))
 	--[[---------
 |			|
 |	WIBOX	|
@@ -241,8 +280,9 @@ function M.setup_screen(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			wibox.widget.systray(),
-			mytextclock,
+			clock_widget,
 			s.mylayoutbox,
+			logoff_button,
 		},
 	})
 end
