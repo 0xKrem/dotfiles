@@ -277,6 +277,7 @@ function M.setup_screen(s)
 	padded_layoutbox:set_bottom(3)
 
 	--bluetooth
+	-- Define the Bluetooth widget
 	local bluetooth_widget = wibox.widget({
 		text = "Bluetooth",
 		align = "center",
@@ -303,25 +304,23 @@ function M.setup_screen(s)
 			-- Spawn blueman-manager and store the client
 			awful.spawn.with_shell("blueman-manager", function(c)
 				blueman_client = c
-				-- Set rules for placement and other properties
-				c:connect_signal("manage", function()
-					c:connect_signal("focus", function()
-						-- Start a timer to check if the window should be closed
-						gears.timer.start_new(0.5, function()
-							if blueman_client and not blueman_client:isvisible() then
-								blueman_client:kill()
-								blueman_client = nil
-							end
-						end)
+				-- Connect signals for the spawned client
+				c:connect_signal("focus", function()
+					-- Handle focus events to manage visibility
+					gears.timer.start_new(0.5, function()
+						if blueman_client and not c:isvisible() then
+							blueman_client:kill()
+							blueman_client = nil
+						end
 					end)
-					c:connect_signal("unfocus", function()
-						-- Automatically close the window when it loses focus
-						gears.timer.start_new(0.5, function()
-							if blueman_client and not c:isvisible() then
-								blueman_client:kill()
-								blueman_client = nil
-							end
-						end)
+				end)
+				c:connect_signal("unfocus", function()
+					-- Close the window after losing focus
+					gears.timer.start_new(0.5, function()
+						if blueman_client and not c:isvisible() then
+							blueman_client:kill()
+							blueman_client = nil
+						end
 					end)
 				end)
 			end)
