@@ -277,7 +277,6 @@ function M.setup_screen(s)
 	padded_layoutbox:set_bottom(3)
 
 	--bluetooth
-	-- Define the Bluetooth widget
 	local bluetooth_widget = wibox.widget({
 		text = "Bluetooth",
 		align = "center",
@@ -297,12 +296,6 @@ function M.setup_screen(s)
 	-- Function to toggle blueman-manager
 	local function toggle_bluetooth_manager()
 		if blueman_client and blueman_client.valid then
-			-- Check if the client is minimized
-			if blueman_client.minimized then
-				blueman_client:emit_signal("request::activate", "mouse_click", { raise = true })
-				return
-			end
-
 			-- Close the blueman-manager window
 			blueman_client:kill()
 			blueman_client = nil
@@ -313,14 +306,20 @@ function M.setup_screen(s)
 				-- Set rules for placement and other properties
 				c:connect_signal("manage", function()
 					c:connect_signal("focus", function()
-						if not c:isvisible() then
-							c:kill()
-						end
+						-- Start a timer to check if the window should be closed
+						gears.timer.start_new(0.5, function()
+							if blueman_client and not blueman_client:isvisible() then
+								blueman_client:kill()
+								blueman_client = nil
+							end
+						end)
 					end)
 					c:connect_signal("unfocus", function()
+						-- Automatically close the window when it loses focus
 						gears.timer.start_new(0.5, function()
-							if not c:isvisible() then
-								c:kill()
+							if blueman_client and not c:isvisible() then
+								blueman_client:kill()
+								blueman_client = nil
 							end
 						end)
 					end)
