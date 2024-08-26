@@ -31,6 +31,14 @@ return gears.table.join(
 	|	WINDOW BINDINGS    |
 	|					   |
 	----------------------]]
+	-- reapply window rules
+	awful.key({ modkey }, "r", function()
+		for _, c in pairs(client.get()) do
+			-- Reapply the rules to each client
+			awful.rules.apply(c)
+		end
+	end, { description = "reapply window rules", group = "custom" }),
+
 	--show help
 	awful.key(
 		{ modkey }, -- Modifier
@@ -319,5 +327,35 @@ return gears.table.join(
 			awful.spawn("flameshot gui")
 		end,
 		{ description = "Print screen", group = "Multimedia" }
+	),
+
+	-- Bitwarden
+	awful.key(
+		{ modkey }, --Modifier
+		"q", --Key
+		function() --Action
+			awful.spawn("flatpak run com.bitwarden.desktop")
+		end,
+		{ description = "password manager", group = "Multimedia" }
+	),
+
+	-- Brave
+	awful.key(
+		{ modkey }, --Modifier
+		"z", --Key
+		function() --Action
+			awful.spawn("flatpak run com.brave.Browser")
+		end,
+		{ description = "Brave brower", group = "Multimedia" }
+	),
+
+	-- EasyEffects
+	awful.key(
+		{ modkey }, --Modifier
+		"e", --Key
+		function() --Action
+			awful.spawn("flatpak run com.github.wwmm.easyeffects")
+		end,
+		{ description = "Equalizer", group = "Multimedia" }
 	)
 )

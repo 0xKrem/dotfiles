@@ -301,6 +301,7 @@ awful.rules.rules = {
 			ontop = true,
 		},
 	},
+
 	-- xfce panel no borders
 	{ rule = { class = "Xfce4-panel" }, properties = { border_width = 0 } },
 }
@@ -369,4 +370,10 @@ client.connect_signal("focus", function(c)
 end)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
+end)
+
+client.connect_signal("unfocus", function(c)
+	if c.class == "Blueman-manager" then
+		c:kill()
+	end
 end)
