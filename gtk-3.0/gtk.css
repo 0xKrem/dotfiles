@@ -1,8 +1,8 @@
 .flat,
 .toggle {
   font-family: 'DejaVuSans Nerd Font';
-  font-size: 20px;
-  padding: 0px 9px 0px 7px;
+  font-size: 19px;
+  padding: 0px 8px 0px 6px;
 }
 
 .flat:hover,
@@ -15,4 +15,21 @@
   background-color: #11121a;
   border-bottom: 2px solid #bfd3ff;
   border-radius: 8px;
+}
+
+calendar {
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  background-color: #1c1c2e;
+}
+
+calendar.highlight {
+  color: grey;
+}
+
+calendar:selected {
+  background-color: #94b6ff;
+  border-radius: 5px;
 }
