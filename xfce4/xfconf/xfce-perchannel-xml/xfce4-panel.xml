@@ -30,6 +30,8 @@
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="12"/>
+        <value type="int" value="13"/>
+        <value type="int" value="15"/>
         <value type="int" value="14"/>
         <value type="int" value="3"/>
       </property>
@@ -84,12 +86,23 @@
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="known-players" type="string" value="Brave;firefox;vlc"/>
+      <property name="known-players" type="string" value="Brave;firefox;org.mozilla.firefox;vlc"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-1" type="string" value="tasklist">
       <property name="show-handle" type="bool" value="false"/>
+    </property>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-15" type="string" value="genmon">
+      <property name="command" type="string" value="/home/krem/.config/xfce4/scripts/layout.bin"/>
+      <property name="use-label" type="bool" value="false"/>
+      <property name="text" type="string" value="(genmon)"/>
+      <property name="update-period" type="int" value="750"/>
+      <property name="enable-single-row" type="bool" value="true"/>
+      <property name="font" type="string" value="DejaVu Sans Mono Bold 14"/>
     </property>
   </property>
 </channel>
