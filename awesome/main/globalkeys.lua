@@ -264,7 +264,7 @@ return gears.table.join(
 	--Discord
 	awful.key(
 		{ modkey }, --Modifier
-		"c", --Key
+		"d", --Key
 		function() --Action
 			awful.spawn(discord)
 		end,
