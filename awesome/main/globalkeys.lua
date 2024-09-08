@@ -357,5 +357,14 @@ return gears.table.join(
 			awful.spawn("flatpak run com.github.wwmm.easyeffects")
 		end,
 		{ description = "Equalizer", group = "Multimedia" }
+	),
+	-- Galculator
+	awful.key(
+		{ modkey }, --Modifier
+		"g", --Key
+		function() --Action
+			awful.spawn("galculator")
+		end,
+		{ description = "Equalizer", group = "Multimedia" }
 	)
 )
