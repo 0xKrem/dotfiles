@@ -160,7 +160,7 @@ clientkeys = gears.table.join(
 )
 
 local max_workspace = 9
-local tag_keys = { "&", "é", '"', "'", "(", "-", "è", "_", "ç" }
+local tag_keys = { "&", "é", '"', "'", "-", "è", "_", "ç" }
 for i = 1, max_workspace do
 	globalkeys = gears.table.join(
 		globalkeys,
