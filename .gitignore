@@ -43,6 +43,9 @@
 !rofi/
 !rofi/**
 
+!systemd/
+!systemd/**
+
 !autostart/awesome.desktop
 
 # ignore specific files
