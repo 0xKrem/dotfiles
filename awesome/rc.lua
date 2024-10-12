@@ -160,7 +160,7 @@ clientkeys = gears.table.join(
 )
 
 local max_workspace = 9
-local tag_keys = { "&", "é", '"', "'", "-", "è", "_", "ç" }
+local tag_keys = { "&", "é", '"', "'", "(", "-", "è", "_" }
 for i = 1, max_workspace do
 	globalkeys = gears.table.join(
 		globalkeys,
@@ -289,11 +289,12 @@ awful.rules.rules = {
 	{ rule = { class = "Virt-manager" }, properties = { screen = 1, tag = tag_icons[4] } },
 
 	{ rule = { class = "Evince" }, properties = { screen = 1, tag = tag_icons[5] } },
+	{ rule = { class = "com.github.johnfactotum.Foliate" }, properties = { screen = 1, tag = tag_icons[5] } },
 
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
 
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = tag_icons[7] } },
-	{ rule = { class = "signal" }, properties = { screen = 1, tag = tag_icons[7] } },
+	{ rule = { class = "Signal" }, properties = { screen = 1, tag = tag_icons[7] } },
 
 	{ rule = { class = "easyeffects" }, properties = { screen = 1, tag = tag_icons[8] } },
 

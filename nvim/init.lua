@@ -33,6 +33,9 @@ vim.opt.undofile = true --Persistant undo
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = false
+-- Make window opaque
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
 
 --  and `:help 'listchars'`
 -- vim.opt.list = true
@@ -73,11 +76,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Exit and close terminal
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>:q<cr>", { desc = "Exit terminal mode" })
-
-vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 --
 --  See `:help wincmd` for a list of all window commands
@@ -366,10 +364,13 @@ require("lazy").setup({
 			local servers = {
 				bashls = {},
 				html = {},
-				-- tsserver = {},
-				-- clangd = {},
+				ts_ls = {},
+				asm_lsp = {},
+				pylsp = {},
+				clangd = {},
 				-- gopls = {},
-				-- pyright = {},
+				pyright = {},
+				intelephense = {},
 
 				lua_ls = {
 					-- cmd = {...},

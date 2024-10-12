@@ -261,16 +261,6 @@ return gears.table.join(
 		{ description = "open Obsidian", group = "launcher" }
 	),
 
-	--Discord
-	awful.key(
-		{ modkey }, --Modifier
-		"d", --Key
-		function() --Action
-			awful.spawn(discord)
-		end,
-		{ description = "open Discord", group = "launcher" }
-	),
-
 	--File explorer
 	awful.key(
 		{ modkey }, --Modifier

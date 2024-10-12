@@ -57,12 +57,17 @@ fi
 
 if [ "$color_prompt" = yes ]; then
 
-	ip=$(ip route get 8.8.8.8 | awk '{print $7}');
+    if [[ -z $DISTROBOX_ENTER_PATH ]]; then
+        id=$(ip route show default | awk '{print $9}');
 	
-	 PS1='\[\e[38;5;63;1m\][\[\e[0;38;5;216m\]\u\[\e[38;5;63;1m\]@\[\e[0;38;5;216m\]$ip\[\e[38;5;63;1m\]]–(\[\e[0;97m\]\W\[\e[38;5;63;1m\])\[\e[0;97m\]\$\[\e[97m\] \[\e[0m\]'
+    else
+	id=$(cat /etc/os-release | grep '^ID=' | cut -f2 -d=)-box
+    fi
+         PS1='\[\e[38;5;63;1m\][\[\e[0;38;5;216m\]\u\[\e[38;5;63;1m\]@\[\e[0;38;5;216m\]$id\[\e[38;5;63;1m\]]–(\[\e[0;97m\]\W\[\e[38;5;63;1m\])\[\e[0;97m\]\$\[\e[97m\] \[\e[0m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -119,3 +124,4 @@ alias nvimrc='nvim ~/.config/nvim/init.lua'
 alias vimrc='vi ~/.config/vim/vimrc'
 alias st='git status'
 alias 2a='cd ~/Desktop/2e-annee/ && ls'
+alias distro="cat /etc/os-release | grep -i 'pretty' | cut -d= -f2"
