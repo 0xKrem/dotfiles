@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Alacritty Telnet
+Exec=/home/krem/.config/alacritty/alacritty-telnet.sh %u
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/telnet;
+
