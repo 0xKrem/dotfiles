@@ -58,7 +58,7 @@ fi
 if [ "$color_prompt" = yes ]; then
 
     if [[ -z $DISTROBOX_ENTER_PATH ]]; then
-        id=$(ip route show default | awk '{print $9}');
+        id=$(ip route get 8.8.8.8 | awk '{print $7}');
 	
     else
 	id=$(cat /etc/os-release | grep '^ID=' | cut -f2 -d=)-box
