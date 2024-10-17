@@ -288,7 +288,7 @@ awful.rules.rules = {
 
 	{ rule = { class = "Virt-manager" }, properties = { screen = 1, tag = tag_icons[4] } },
 
-	{ rule = { class = "Evince" }, properties = { screen = 1, tag = tag_icons[5] } },
+	{ rule = { class = "papers" }, properties = { screen = 1, tag = tag_icons[5] } },
 	{ rule = { class = "com.github.johnfactotum.Foliate" }, properties = { screen = 1, tag = tag_icons[5] } },
 
 	{ rule = { class = "Thunar" }, properties = { screen = 1, tag = tag_icons[6] } },
